@@ -1,0 +1,148 @@
+To make a new directory: 
+
+[gurman@localhost ~]$ mkdir sourcefiles
+
+Then to move to that directory: 
+
+[gurman@localhost ~]$ cd sourcefiles
+
+Question 1: 
+
+To create a new q1.sh file: 
+
+[gurman@localhost sourcefiles]$ vi q1.sh
+
+
+Script:
+
+echo "Enter The First Number: "
+read number1
+echo "Enter The Second Number: "
+read number2
+if [ "$number1" -eq "$number2" ];
+then
+echo "The two numbers are Equal"
+else
+echo "The two numbers are Unequal"
+fi
+
+Now to save the file: 
+
+esc + shift + :
+wq
+
+To run the file: 
+
+[gurman@localhost sourcefiles]$ bash q1.sh
+
+--------------------------------------------------------------------------------------------------
+
+Question 2: 
+
+First to create a new directory mycopies in sourcefiles:
+
+[gurman@localhost sourcefiles]$ mkdir mycopies
+
+Then to create two files to copy. In this case, I am making two text files named: test1.txt and test2.txt
+
+[gurman@localhost sourcefiles]$ vi test1.txt
+[gurman@localhost sourcefiles]$ vi test2.txt
+
+Finally the q2.sh file: 
+
+[gurman@localhost sourcefiles]$ vi q2.sh
+
+Script: 
+
+cp test1.txt test2.txt /home/gurman/sourcefiles/mycopies
+
+Now to save the file: 
+
+esc + shift + :
+wq
+
+Now to run the q2.sh file:
+
+[gurman@localhost sourcefiles]$ bash q2.sh
+
+-----------------------------------------------------------------------------------------
+
+Question 3: 
+
+To create a new q3.sh file
+
+[gurman@localhost sourcefiles]$ vi q3.sh
+
+Script: 
+
+echo "Enter The Side Of A Cube: "
+read side
+volume=`expr "$side" \* "$side" \* "$side" `
+echo "The volume of the cube with side $side is $volume"
+
+Now to save the file: 
+
+esc + shift + :
+wq
+
+To run the file: 
+
+[gurman@localhost sourcefiles]$ bash q3.sh
+
+------------------------------------------------------------------------------------------
+
+Question 4: 
+
+Firstly, to create a new q4.sh file: 
+
+[gurman@localhost sourcefiles]$ vi q4.sh
+
+script: 
+echo "Enter The Username: "
+read username
+echo "User ID Of $username is:" $(id -u $username)
+echo "Group ID Of $username is:" $(id -g $username)
+echo "Home Directory Of $username is:" $(eval echo ~$username)
+
+
+Now to save the file: 
+
+esc + shift + :
+wq
+
+
+To run this file, 
+
+[gurman@localhost sourcefiles]$ bash q4.sh
+
+----------------------------------------------------------------------------------------------
+
+Question 5: 
+
+Firstly, we will create a file q5.sh
+
+[gurman@localhost ~]$ vi q5.sh
+
+Script: 
+
+echo "Currently You Are Browsing " $PATH
+export PATH="$HOME/sourcefiles:$PATH"
+echo "Now Your Path is " $PATH
+
+                             
+Now to save the file: 
+
+esc + shift + :
+wq
+
+
+Finally to run the file: 
+
+[gurman@localhost ~]$ bash q5.sh
+
+
+
+
+
+
+
